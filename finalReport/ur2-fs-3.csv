@@ -1,0 +1,9 @@
+,DS,# of Total rows,# of rows that are NOT different from Non-mod (correct values),# of rows that are different from Non-mod (incorrect values),# of uniques rows,# of unique rows that are NOT different from Non-mod (correct values),# of unique rows that are different from Non-mod (incorrect values),# of unique rows that are NOT covered by rules,# of unique rows  that are covered by rules,# of unique rows that VIOLATE rules,% coverage,# of Rules,Total # of rules Matched (LHS and RHS),Total # of rules Violated (LHS match but NOT RHS),M-intersection-V,Total # of rules used (MUV),Total # of rules NOT used
+0,FS3\fs3_original,71604,71604,0,320,320,0,0,320,0,100.0,459,459,0,0,459,0
+1,fs3_Mod1_p,71604,59722,11882,232,135,97,0,232,0,100.0,459,459,0,0,459,0
+2,fs3_Mod2_e,37786,31396,6390,108,88,20,2,106,33,98.14814814814815,459,459,86,86,459,0
+3,fs3_Mod3_s,71604,28199,43405,320,83,237,0,320,21,100.0,459,459,98,98,459,0
+4,fs3_Mod4_pes,7160,1663,5497,14,8,6,2,12,5,85.71428571428571,459,459,122,122,459,0
+5,fs3_Mod5_pe,37786,29994,7792,106,60,46,2,104,33,98.11320754716981,459,459,86,86,459,0
+6,fs3_Mod6_ps,71604,28199,43405,232,76,156,0,232,21,100.0,459,459,98,98,459,0
+7,fs3_Mod7_es,7160,1663,5497,17,9,8,2,15,7,88.23529411764706,459,459,122,122,459,0

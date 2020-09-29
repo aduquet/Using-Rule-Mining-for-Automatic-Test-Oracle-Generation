@@ -1,0 +1,7 @@
+,size,isEmpty,peek_obj_type,diff,testId,instanceId
+1,"size == ""2""","isEmpty == ""True""","peek_obj_type == ""class java.lang.String""",Yes,1597060821694:daaebc60-848c-440b-ac0a-256cd6cc8e8d,1597060821694:d3bc8730-e255-48f7-b858-b2f7cbff8e66
+7,"size == ""0""","isEmpty == ""True""","peek_obj_type == ""EmptyObject""",No,1597060821694:42d14958-5b8c-46be-8dbc-3cf990583bb8,1597060821694:c021ef64-a909-42cb-bc10-a6677b8a2ab5
+37,"size == ""3""","isEmpty == ""False""","peek_obj_type == ""class java.lang.Float""",Yes,1597060821693:a4807674-f4ab-4f19-b546-c91fd85ff9c8,1597060821693:75cf696b-3ebe-44e4-b5a6-16ff4ab10a09
+65,"size == ""4""","isEmpty == ""False""","peek_obj_type == ""class java.lang.Double""",Yes,1597060821693:2c7fe8f1-0f96-41f8-85a0-72ca3cbdf148,1597060821693:92853ea3-f95a-4fa3-aecd-62013539557c
+355,"size == ""3""","isEmpty == ""False""","peek_obj_type == ""class java.lang.Long""",Yes,1597060821686:c1ba9620-a442-4e39-b4a2-e09e7023e459,1597060821686:458de648-e5cd-4194-820f-a68d016edbee
+5042,"size == ""3""","isEmpty == ""False""","peek_obj_type == ""class experiment.drivers.AlejaStackTestDriver""",Yes,1597060821558:cff3b75c-2ebb-4f38-9fd2-a38cebcd7e8f,1597060821558:c0021baf-2f4c-4d43-ad01-a9a354a41df7

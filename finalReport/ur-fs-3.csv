@@ -1,0 +1,9 @@
+,DS,# of Total rows,# of rows that are NOT different from Non-mod (correct values),# of rows that are different from Non-mod (incorrect values),# of uniques rows,# of unique rows that are NOT different from Non-mod (correct values),# of unique rows that are different from Non-mod (incorrect values),# of unique rows that are NOT covered by rules,# of unique rows  that are covered by rules,# of unique rows that VIOLATE rules,% coverage,# of Rules,Total # of rules Matched (LHS and RHS),Total # of rules Violated (LHS match but NOT RHS),M-intersection-V,Total # of rules used (MUV),Total # of rules NOT used
+0,FS3\fs3_originalruleValidator.csv,71604,71604,0,320,320,0,0,320,0,100.0,49,49,0,0,49,0
+1,fs3_Mod1,71604,59722,11882,232,135,97,0,232,0,100.0,49,49,0,0,49,0
+2,fs3_Mod2,37786,31396,6390,108,88,20,2,106,33,98.14814814814815,49,49,23,23,49,0
+3,fs3_Mod3,71604,28199,43405,320,83,237,0,320,21,100.0,49,49,3,3,49,0
+4,fs3_Mod4,7160,1663,5497,14,8,6,3,11,5,78.57142857142857,49,49,16,16,49,0
+5,fs3_Mod5,37786,29994,7792,106,60,46,2,104,33,98.11320754716981,49,49,23,23,49,0
+6,fs3_Mod6,71604,28199,43405,232,76,156,0,232,21,100.0,49,49,3,3,49,0
+7,fs3_Mod7,7160,1663,5497,17,9,8,3,14,7,82.35294117647058,49,49,16,16,49,0

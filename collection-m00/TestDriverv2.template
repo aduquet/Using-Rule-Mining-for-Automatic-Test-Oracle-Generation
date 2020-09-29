@@ -1,0 +1,116 @@
+@import java.lang.reflect.*, java.util.function.*, java.util.stream.*, at.scch.test.*, at.scch.test.util.* ,at.scch.test.internalstate.driver.generator.*
+@args String packageName, String className, String classTypeForTesting, List<Method> methodList
+
+package @(packageName);
+
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.Writer;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.logging.Logger;
+
+
+
+/**
+ * Generated class that is intended to be used as test driver for class {@@link @(className)}.
+ * 
+ * @@author generated code
+ *
+ */
+public class @(className)TestDriver {
+ 
+    protected static final Logger logger = Logger.getLogger(@(className)TestDriver.class.getName());
+   
+    private static Writer writer;
+    static {
+    	try {
+    	    String seed = System.getProperty("seed", "0");
+    		String limit = System.getProperty("limit", "0");
+			writer = new FileWriter(String.format("@(className)TestDriverData_seed%s_limit%s.csv", seed, limit));
+			//write header line
+			@{
+				StringBuffer buffer = new StringBuffer();
+				buffer.append("testId,instanceId,");
+				for(Method method: DriverClassGenerator.getInternalStateItems(className)) {
+					buffer.append(method.getName()+",");
+				}    
+				buffer.append("calledMethod,arguments");
+			}    
+	    	writer.write("@(buffer.toString())"+"\n");
+	    	writer.flush();
+			
+		} catch (IOException e) {
+			throw new ExceptionInInitializerError(e.getMessage());
+		}
+    }
+    
+    private @(packageName).@(className)@(classTypeForTesting) classUnderTest;
+    private String instanceId;
+    private String testId;
+    
+    public @(className)@(classTypeForTesting)TestDriver() {
+    	this.classUnderTest = new @(packageName).@(className)@(classTypeForTesting)();
+    	this.instanceId = String.valueOf(java.time.Instant.now().toEpochMilli()+":"+java.util.UUID.randomUUID().toString());
+    	this.testId = System.getProperty("testId", "unknown");
+    	
+    	writeInternalState("CTOR", new String[0]);
+    }
+    
+@for(Method method: methodList) {
+@if(!DriverClassGenerator.isProvidingPartOfInternalState(method)) {
+    @{ 
+        String methodDeclaration = DriverClassGenerator.getDelegationMethodDeclaration(method);
+        //method body is multiline -> absolute ident of 2 chars
+        String methodBody = DriverClassGenerator.getDelegationMethodBody(method, className, 2);
+        String parametersAsString = DriverClassGenerator.getParameterAsString(method);
+    }
+    @(methodDeclaration) {
+	    try {
+@(methodBody)
+		} finally {
+			writeInternalState("@(method.getName())", new String[]{@(parametersAsString)});
+		}
+    }
+    }
+}
+
+	private void writeInternalState(String methodName, String[] parametersAsString)  {
+		String internalState =  getInternalState(methodName, parametersAsString);
+		if(writer == null) return;
+		try {
+			writer.write(internalState);
+			writer.flush();
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+    private String getInternalState(String methodName, String[] parametersAsString) {
+		@{
+			List<String> internalStateItems = DriverClassGenerator.getInternalStateItemsAsString(className);
+		}
+   		List<String> state = new ArrayList<>();
+   		//todo add test identifier
+   		state.add(testId);
+   		state.add(instanceId);
+	 @for(String state: internalStateItems) {
+    	try {
+	   		state.add(@(state));
+        } catch (Exception e) {
+        	//e.printStackTrace();
+        	state.add("EXC");
+        }
+	 }
+		state.add(methodName);
+		state.add(String.join("_",parametersAsString));
+        return String.join(",", state) + "\n";
+     }
+	     
+	     
+    protected @(packageName).@(className)@(classTypeForTesting) getClassUnderTest() {
+        return this.classUnderTest;
+    }
+
+}
+

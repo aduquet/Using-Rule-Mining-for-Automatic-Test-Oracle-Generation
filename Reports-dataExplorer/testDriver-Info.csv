@@ -1,0 +1,9 @@
+,DS,# of Total rows,testId-Max,testId-Min,testId-Avg,testId-Unique,instanceId-Max,instanceId-Min,instanceId-Avg,instanceId-unique,size_max,size_min,isEmpty_True,isEmpty_False,peek_obj_type-unique,peek_obj_type-Most frequent,peek_obj_type-Freq,method-most frequent,method-Push,method-Pop,method-clear,pushInput-unique,pushInput-Most frequent,pushInput-Freq
+0,1-original,86589,76.0,2.0,43.0,2037.0,17.0,1.0,6.0,14985.0,6.0,0.0,43184,43405,13,EmptyObject,43184,push,39311,15900,16393,13,none,47278
+1,Mod1-p,86589,76.0,2.0,43.0,2037.0,17.0,1.0,6.0,14985.0,6.0,0.0,43184,43405,13,EmptyObject,43184,push,39311,15900,16393,13,none,47278
+2,Mod2-e,46356,74.0,2.0,23.0,2037.0,15.0,2.0,5.0,8570.0,5.0,0.0,30086,16270,12,EmptyObject,23696,push,20750,8679,8357,12,none,25606
+3,Mod3-s,86589,76.0,2.0,43.0,2037.0,17.0,1.0,6.0,14985.0,7.0,0.0,43184,43405,13,EmptyObject,43184,push,39311,15900,16393,13,none,47278
+4,Mod4-pes,10385,17.0,2.0,5.0,2037.0,10.0,1.0,3.0,3225.0,4.0,0.0,9974,411,3,class java.lang.String,5086,push,3473,2036,1651,6,none,6912
+5,Mod5-pe,46356,74.0,2.0,23.0,2037.0,15.0,2.0,5.0,8570.0,5.0,0.0,30086,16270,12,EmptyObject,23696,push,20750,8679,8357,12,none,25606
+6,Mod6-ps,86589,76.0,2.0,43.0,2037.0,17.0,1.0,6.0,14985.0,7.0,0.0,43184,43405,13,EmptyObject,43184,push,39311,15900,16393,13,none,47278
+7,Mod7-es,10385,17.0,2.0,5.0,2037.0,10.0,1.0,3.0,3225.0,4.0,0.0,9974,411,6,class java.lang.String,5086,push,3473,2036,1651,6,none,6912

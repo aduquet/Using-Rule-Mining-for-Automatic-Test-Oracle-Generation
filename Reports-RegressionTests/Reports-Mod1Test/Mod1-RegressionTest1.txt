@@ -1,0 +1,20 @@
+
+C:\Users\duquet\Documents\GitRepos\Final\collection-m00>call fullrun.bat experiment.drivers AlejaStack 0 10000 
+
+C:\Users\duquet\Documents\GitRepos\Final\collection-m00>REM call randoop-call.bat experiment.drivers AlejaStack 0 10000 
+
+C:\Users\duquet\Documents\GitRepos\Final\collection-m00>call testsuite.bat experiment.drivers AlejaStack 0 10000 
+
+C:\Users\duquet\Documents\GitRepos\Final\collection-m00>set package=experiment.drivers 
+
+C:\Users\duquet\Documents\GitRepos\Final\collection-m00>set testclasspath=experiment\drivers 
+
+C:\Users\duquet\Documents\GitRepos\Final\collection-m00>javac -d .\target\test-classes -classpath .;C:\Users\duquet\Documents\Installers\junit-4.13.jar;target\classes\;target\test-classes\ src\test\java\experiment\drivers\test\*_AlejaStackTest_0_10000_*.java 
+
+C:\Users\duquet\Documents\GitRepos\Final\collection-m00>java -Dseed=0 -Dlimit=10000 -classpath .;;C:\Users\duquet\Documents\Installers\junit-4.13.jar;C:\Users\duquet\Documents\Installers\hamcrest-core-1.3.jar;target\classes\;target\test-classes\ org.junit.runner.JUnitCore experiment.drivers.test.Regression_AlejaStackTest_0_10000_ 
+JUnit version 4.13
+...................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+Time: 1.621
+
+OK (1763 tests)
+

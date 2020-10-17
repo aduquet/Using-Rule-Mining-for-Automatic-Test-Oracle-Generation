@@ -1,5 +1,0 @@
-,Unnamed: 0,size,isEmpty,peek_obj_type,diff,testId,instanceId,Matched_LHS,RuleMatched_LHS,Matched,RuleMatched,Violated,RuleViolated
-0,1,"size == ""2""","isEmpty == ""True""","peek_obj_type == ""class java.lang.String""",Yes,1597050830315:d9d7c290-d201-4637-a0ea-df378184cd1c,1597050830315:66f252e1-578a-4ee9-95e0-447339483317,4,"['1', '4', '8', '15']",0,,4,"['1', '4', '8', '15']"
-1,8,"size == ""3""","isEmpty == ""False""","peek_obj_type == ""class java.lang.Float""",Yes,1597050830315:a7ec5d7b-ffd8-4acb-a8ad-a6e0dac16ffa,1597050830315:ec49afab-ebbb-4b1a-b982-5b53c5a56259,0,,2,"['0', '6']",0,
-2,19,"size == ""0""","isEmpty == ""True""","peek_obj_type == ""EmptyObject""",No,1597050830315:30a25f51-6805-4527-80ac-b852a4a5a4f3,1597050830315:88191795-78d0-4fee-816d-6b3c92a43926,0,,12,"['2', '3', '4', '5', '7', '8', '9', '10', '12', '13', '14', '15']",0,
-3,30,"size == ""4""","isEmpty == ""False""","peek_obj_type == ""class java.lang.Float""",Yes,1597050830314:f1612ca6-7fa4-4ad7-950f-4c7dddc7484f,1597050830314:ef2d32af-432a-4096-ab74-1fff11aaffbc,0,,1,['6'],0,

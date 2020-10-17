@@ -38,8 +38,8 @@ def counterItem(item, rows, fin, WHS):
             if i.find(item) != -1:
                 times += 1
                 mainDictRHS[item] = times
-            else:
-                mainDictRHS[item] = 20
+            #else:
+             #   mainDictRHS[item] = 20
         if fin == 10:
             return mainDictRHS
 
@@ -48,8 +48,8 @@ def counterItem(item, rows, fin, WHS):
             if i.find(item) != -1:
                 times += 1
                 mainDictLHS[item] = times
-            else:
-                mainDictLHS[item] = 1000
+            #else:
+            #    mainDictLHS[item] = 1000
 
         if fin == 10:
             return mainDictLHS
@@ -116,9 +116,9 @@ def lhs_rhs(df, file_out):
     df['lhs_rhs-size_p'] = df['LHS_size_p'] / df['RHS_size_p']
     df['lhs_rhs-calledMethod_p'] = df['LHS_calledMethod_p'] / df['RHS_calledMethod_p']
     df['lhs_rhs-pushInput_p'] = df['LHS_pushInput_p'] / df['RHS_pushInput_p']
-    df.replace(50, 'No item', inplace=True)
-    df.replace(1000, 'No item', inplace=True)
-    df.replace(20, 'No item', inplace=True)
+    #df.replace(50, 'No item', inplace=True)
+    #df.replace(1000, 'No item', inplace=True)
+    #df.replace(20, 'No item', inplace=True)
 
     df.to_csv(file_out)
     print('Done')
@@ -160,16 +160,25 @@ if __name__ == '__main__':
             print(rulesV)
 
         else:
-            for row in rulesV:
-                setRule = takeViolations(row)
-                set_ruleF = preProsRules(setRule, dfr)
-                set_ruleF = set_ruleF[['LHS', 'RHS']]
-                lhs, rhs, tam = counter(set_ruleF)
-                item_count = {'Number_of_Rules': tam, 'LHS_peek_obj_type': lhs['peek_obj_type'], 'LHS_isEmpty': lhs['isEmpty'], 'LHS_size': lhs['size'], 'LHS_calledMethod': lhs['calledMethod'], 'LHS_pushInput': lhs['pushInput'],
+            aux2 = []
+            for k in rulesV:
+                k = k.replace('[', '')
+                k = k.replace("'", '')
+                k = k.replace(']', '')
+                k = k.replace(' ', '')
+                k = k.split(',')
+                aux2.extend(k)
+                print(k)
+            print(aux2)
+
+            set_ruleF = preProsRules(aux2, dfr)
+            set_ruleF = set_ruleF[['LHS', 'RHS']]
+            lhs, rhs, tam = counter(set_ruleF)
+            item_count = {'Number_of_Rules': tam, 'LHS_peek_obj_type': lhs['peek_obj_type'], 'LHS_isEmpty': lhs['isEmpty'], 'LHS_size': lhs['size'], 'LHS_calledMethod': lhs['calledMethod'], 'LHS_pushInput': lhs['pushInput'],
                         'LHS_peek_p': lhs['peek_p'], 'LHS_isEmpty_p': lhs['isEmpty_p'], 'LHS_size_p': lhs['size_p'], 'LHS_calledMethod_p': lhs['calledMethod_p'], 'LHS_pushInput_p': lhs['pushInput_p'],
                         'RHS_peek_obj_type': rhs['peek_obj_type'], 'RHS_isEmpty': rhs['isEmpty'], 'RHS_size': rhs['size'], 'RHS_calledMethod': rhs['calledMethod'], 'RHS_pushInput': rhs['pushInput'],
                         'RHS_peek_p': rhs['peek_p'], 'RHS_isEmpty_p': rhs['isEmpty_p'], 'RHS_size_p': rhs['size_p'], 'RHS_calledMethod_p': rhs['calledMethod_p'], 'RHS_pushInput_p': rhs['pushInput_p']}
-                aux.append(item_count)
+            aux.append(item_count)
             final = pd.DataFrame(aux)
             lhs_rhs(final, file_out)
 

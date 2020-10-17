@@ -1,0 +1,2 @@
+,index,size,isEmpty,peek_obj_type,diff,testId,instanceId,Matched_LHS,RuleMatched_LHS,Matched,RuleMatched,Violated,RuleViolated
+0,3,"size == ""2""","isEmpty == ""True""","peek_obj_type == ""class java.lang.String""",Yes,1597047440148:f9994077-3ad2-452f-9a29-7a5f51a994a2,1597047440148:04d9a8f6-7033-4fb7-9c92-6e4b5e717f3f,3,"['2', '6', '13']",0,,3,"['2', '6', '13']"
